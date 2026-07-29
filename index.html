@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uova di Puglia · Brindisi</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <h1>🐔 Uova di Puglia</h1>
+                <span>Brindisi · 5 km dal mare</span>
+            </div>
+            <nav>
+                <a href="#prodotti">Prodotti</a>
+                <a href="#galleria">Galleria</a>
+                <a href="#chi-siamo">Chi siamo</a>
+                <a href="#dove-siamo">Dove siamo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>🐓 2 ettari di libertà</h2>
+                <p>Le nostre galline pascolano tutto il giorno all'aperto a Brindisi, a 5 km dal mare.</p>
+                <a href="#prodotti" class="btn">Scopri le uova</a>
+            </div>
+        </section>
+
+        <section class="offerte">
+            <div class="container">
+                <h3>🔥 Offerta del giorno</h3>
+                <div id="offertaContainer" class="offerta-box"></div>
+            </div>
+        </section>
+
+        <section id="prodotti" class="prodotti">
+            <div class="container">
+                <h3>📦 Le nostre uova</h3>
+                <div class="grid-card" id="listaProdotti"></div>
+                <div style="text-align:center; margin-top:40px;">
+                    <a href="https://wa.me/393331234567?text=Ciao%2C%20vorrei%20ordinare%20delle%20uova%20fresche%21" 
+                       target="_blank" class="btn-wa-grande">
+                       💬 Ordina via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="galleria" class="galleria">
+            <div class="container">
+                <h3>📸 Vita in fattoria</h3>
+                <div class="sezione-media">
+                    <h4>🖼️ Foto</h4>
+                    <div class="grid-media" id="galleriaFoto"></div>
+                </div>
+                <div class="sezione-media">
+                    <h4>🎬 Video</h4>
+                    <div class="grid-media" id="galleriaVideo"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chi-siamo" class="info-azienda">
+            <div class="container">
+                <h3>🌿 Chi siamo</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span>🌿</span>
+                        <h4>Pascolo libero</h4>
+                        <p>Galline su 2 ettari di terreno naturale.</p>
+                    </div>
+                    <div class="info-item">
+                        <span>🌊</span>
+                        <h4>Vicino al mare</h4>
+                        <p>A soli 5 km dalla costa di Brindisi.</p>
+                    </div>
+                    <div class="info-item">
+                        <span>🥚</span>
+                        <h4>Raccolta manuale</h4>
+                        <p>Uova raccolte a mano ogni giorno.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dove-siamo" class="mappa-wa">
+            <div class="container">
+                <h3>📍 Dove siamo</h3>
+                <div class="row-mapa">
+                    <div class="col-mapa">
+                        <p><strong id="posizioneTesto">Contrada Mare, Brindisi</strong></p>
+                        <div class="map-wrapper">
+                            <iframe id="mappaIframe"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.456789012345!2d17.9365!3d40.6389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1338f0e0e0e0e0e0%3A0x0!2zNDDCsDM4JzIwLjAiTiAxN8KwNTYnMTUuMCJF!5e0!3m2!1sit!2sit!4v1234567890" 
+                                width="100%" 
+                                height="280" 
+                                style="border:0; border-radius: 28px;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="col-mapa wa-col">
+                        <h3>📲 Ordina su WhatsApp</h3>
+                        <p>Scrivici per disponibilità e prezzi.</p>
+                        <a href="https://wa.me/393331234567?text=Ciao%2C%20vorrei%20ordinare%20delle%20uova%20fresche%21" 
+                           target="_blank" class="btn-wa">
+                           💬 Contattaci
+                        </a>
+                        <div class="wa-info">
+                            <span>📞 +39 331 913 8180</span>
+                            <span>⏰ 8:00 – 18:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Uova di Puglia · allevamento a Brindisi</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
