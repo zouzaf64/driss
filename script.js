@@ -1,265 +1,191 @@
-// script.js – con link mappa
-(function() {
-    "use strict";
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uova di Puglia · Allevamento a Brindisi</title>
+    <meta name="description" content="Uova fresche da allevamento a pascolo libero a Brindisi. Galline felici a 5 km dal mare. Ordina online su WhatsApp." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <h1>🐔 Uova di Puglia</h1>
+                <span>📍 Brindisi · 5 km dal mare</span>
+            </div>
+            <nav>
+                <a href="#prodotti">Prodotti</a>
+                <a href="#galleria">Galleria</a>
+                <a href="#chi-siamo">Chi siamo</a>
+                <a href="#dove-siamo">Dove siamo</a>
+            </nav>
+        </div>
+    </header>
 
-    let dati = {
-        prodotti: [
-            { nome: "Uova Grandi", prezzo: "€ 6.50", desc: "6 uova extra large" },
-            { nome: "Uova Medie", prezzo: "€ 5.20", desc: "6 uova medie" },
-            { nome: "Uova Miste", prezzo: "€ 7.00", desc: "12 uova mix" },
-        ],
-        offerta: {
-            titolo: "🎉 Offerta Speciale!",
-            prezzo: "€ 5.00",
-            desc: "6 uova grandi + 6 medie scontate!"
-        },
-        mappa: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.456789012345!2d17.9365!3d40.6389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1338f0e0e0e0e0e0%3A0x0!2zNDDCsDM4JzIwLjAiTiAxN8KwNTYnMTUuMCJF!5e0!3m2!1sit!2sit!4v1234567890",
-        foto: [
-            { url: "https://picsum.photos/seed/gallina1/400/300", caption: "Galline al pascolo" },
-            { url: "https://picsum.photos/seed/gallina2/400/300", caption: "Raccolta uova" },
-        ],
-        video: [
-            { url: "https://www.w3schools.com/html/mov_bbb.mp4", caption: "Le galline nel pomeriggio" },
-        ]
-    };
-
-    function caricaDati() {
-        try {
-            const stored = localStorage.getItem('uovaDati');
-            if (stored) {
-                const parsed = JSON.parse(stored);
-                if (parsed) dati = parsed;
-            }
-        } catch (e) {}
-    }
-
-    function salvaDati() {
-        try {
-            localStorage.setItem('uovaDati', JSON.stringify(dati));
-        } catch (e) {}
-    }
-
-    function renderProdotti() {
-        const el = document.getElementById('listaProdotti');
-        if (!el) return;
-        el.innerHTML = '';
-        dati.prodotti.forEach(p => {
-            el.innerHTML += `
-                <div class="card-prodotto">
-                    <h4>${p.nome}</h4>
-                    <div class="prezzo">${p.prezzo}</div>
-                    <div class="desc">${p.desc}</div>
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge">🐓 Allevamento a pascolo</span>
+                    <h2>Uova fresche <br>di galline <span class="highlight">felici</span></h2>
+                    <p>2 ettari di libertà a Brindisi, a soli 5 km dal mare. Le nostre galline pascolano all'aperto tutto l'anno dall'alba al tramonto.ZERO STRESS.</p>
+                    <div class="hero-buttons">
+                        <a href="#prodotti" class="btn-primary">Scopri le uova</a>
+                        <a href="https://wa.me/393319138180?text=Ciao%2C%20vorrei%20informazioni%20sulle%20uova%20fresche%21" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
+                    </div>
                 </div>
-            `;
-        });
-    }
-
-    function renderOfferta() {
-        const el = document.getElementById('offertaContainer');
-        if (!el) return;
-        const o = dati.offerta;
-        el.innerHTML = `
-            <h4>${o.titolo}</h4>
-            <div class="prezzo-offerta">${o.prezzo}</div>
-            <div class="desc-offerta">${o.desc}</div>
-        `;
-    }
-
-    function renderMappa() {
-        const iframe = document.getElementById('mappaIframe');
-        if (iframe && dati.mappa) {
-            iframe.src = dati.mappa;
-        }
-    }
-
-    function renderFoto() {
-        const el = document.getElementById('galleriaFoto');
-        if (!el) return;
-        el.innerHTML = '';
-        dati.foto.forEach(f => {
-            el.innerHTML += `
-                <div class="media-item">
-                    <img src="${f.url}" alt="${f.caption}" loading="lazy" />
-                    <div class="caption">${f.caption}</div>
+                <div class="hero-image">
+                    <div class="hero-img-placeholder">
+                        <span>🐔</span>
+                    </div>
                 </div>
-            `;
-        });
-    }
+            </div>
+        </section>
 
-    function renderVideo() {
-        const el = document.getElementById('galleriaVideo');
-        if (!el) return;
-        el.innerHTML = '';
-        dati.video.forEach(v => {
-            el.innerHTML += `
-                <div class="media-item">
-                    <video controls preload="metadata">
-                        <source src="${v.url}" type="video/mp4" />
-                    </video>
-                    <div class="caption">${v.caption}</div>
+        <!-- STATS -->
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Ettari di terreno</span>
                 </div>
-            `;
-        });
-    }
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Km dal mare</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Pascolo libero</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">365</span>
+                    <span class="stat-label">Giorni all'anno</span>
+                </div>
+            </div>
+        </section>
 
-    function renderTutto() {
-        renderProdotti();
-        renderOfferta();
-        renderMappa();
-        renderFoto();
-        renderVideo();
-    }
+        <!-- OFFERTA DEL GIORNO -->
+        <section class="offerte">
+            <div class="container">
+                <div class="offerte-header">
+                    <span class="section-badge">🔥 Offerta del giorno</span>
+                    <h3>Non perdere questa occasione!</h3>
+                </div>
+                <div id="offertaContainer" class="offerta-box"></div>
+            </div>
+        </section>
 
-    function setupImageUpload() {
-        const input = document.getElementById('uploadFoto');
-        const preview = document.getElementById('uploadPreview');
-        const textarea = document.getElementById('adminFoto');
-        if (!input || !preview || !textarea) return;
+        <!-- PRODOTTI -->
+        <section id="prodotti" class="prodotti">
+            <div class="container">
+                <div class="prodotti-header">
+                    <span class="section-badge">📦 Le nostre uova</span>
+                    <h3>Qualità che si vede</h3>
+                    <p>Raccolte a mano ogni giorno dalle nostre galline felici</p>
+                </div>
+                <div class="grid-card" id="listaProdotti"></div>
+                <div class="cta-center">
+                    <a href="https://wa.me/393319138180?text=Ciao%2C%20vorrei%20ordinare%20delle%20uova%20fresche%21" 
+                       target="_blank" class="btn-wa-grande">
+                       💬 Ordina ora su WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
 
-        input.addEventListener('change', function() {
-            const files = Array.from(this.files);
-            const current = textarea.value ? textarea.value.split('\n').filter(l => l.trim()) : [];
-            
-            files.forEach(file => {
-                if (!file.type.startsWith('image/')) return;
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const base64 = e.target.result;
-                    const caption = prompt('Didascalia per questa foto:', file.name.split('.')[0]);
-                    current.push(`${base64}||${caption || file.name}`);
-                    textarea.value = current.join('\n');
-                    
-                    const img = document.createElement('img');
-                    img.src = base64;
-                    preview.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            });
-            this.value = '';
-        });
-    }
+        <!-- GALLERIA -->
+        <section id="galleria" class="galleria">
+            <div class="container">
+                <div class="galleria-header">
+                    <span class="section-badge">📸 Vita in fattoria</span>
+                    <h3>I nostri momenti</h3>
+                </div>
+                <div class="sezione-media">
+                    <div class="grid-media" id="galleriaFoto"></div>
+                </div>
+                <div class="sezione-media">
+                    <div class="grid-media" id="galleriaVideo"></div>
+                </div>
+            </div>
+        </section>
 
-    function initAdmin() {
-        const form = document.getElementById('adminForm');
-        if (!form) return;
+        <!-- CHI SIAMO -->
+        <section id="chi-siamo" class="info-azienda">
+            <div class="container">
+                <div class="info-header">
+                    <span class="section-badge">🌿 La nostra filosofia</span>
+                    <h3>Chi siamo</h3>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">🌿</div>
+                        <h4>Pascolo libero</h4>
+                        <p>Galline su 2 ettari di terreno naturale a Brindisi</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🌊</div>
+                        <h4>Vicino al mare</h4>
+                        <p>A soli 5 km dalla costa, aria pura e salubre</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🥚</div>
+                        <h4>Raccolta manuale</h4>
+                        <p>Uova raccolte a mano ogni giorno con cura</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">❤️</div>
+                        <h4>Benessere animale</h4>
+                        <p>Galline felici = uova più buone e genuine</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        const fProdotti = document.getElementById('adminProdotti');
-        const fOffTitolo = document.getElementById('adminOffertaTitolo');
-        const fOffPrezzo = document.getElementById('adminOffertaPrezzo');
-        const fOffDesc = document.getElementById('adminOffertaDesc');
-        const fMappa = document.getElementById('adminMappa');
-        const fFoto = document.getElementById('adminFoto');
-        const fVideo = document.getElementById('adminVideo');
-        const msg = document.getElementById('adminMsg');
+        <!-- MAPPA + WHATSAPP -->
+        <section id="dove-siamo" class="mappa-wa">
+            <div class="container">
+                <div class="mappa-header">
+                    <span class="section-badge">📍 Dove trovarci</span>
+                    <h3>Vieni a trovarci</h3>
+                </div>
+                <div class="row-mapa">
+                    <div class="col-mapa">
+                        <p><strong id="posizioneTesto">Contrada Mare, Brindisi</strong></p>
+                        <div class="map-wrapper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2329.571839311396!2d17.848331754789978!3d40.64617963734341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sit!2sit!4v1785482670500!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-mapa wa-col">
+                        <div class="wa-card">
+                            <h4>📲 Ordina su WhatsApp</h4>
+                            <p>Scrivici per disponibilità, prezzi e consegne</p>
+                            <a href="https://wa.me/393319138180?text=Ciao%2C%20vorrei%20ordinare%20delle%20uova%20fresche%21" 
+                               target="_blank" class="btn-wa">
+                               💬 Contattaci ora
+                            </a>
+                            <div class="wa-info">
+                                <span>📞 +39 331 913 8180</span>
+                                <span>⏰ 8:00 – 18:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        function caricaForm() {
-            if (fProdotti) fProdotti.value = dati.prodotti.map(p => `${p.nome}||${p.prezzo}||${p.desc}`).join('\n');
-            if (fOffTitolo) fOffTitolo.value = dati.offerta.titolo;
-            if (fOffPrezzo) fOffPrezzo.value = dati.offerta.prezzo;
-            if (fOffDesc) fOffDesc.value = dati.offerta.desc;
-            if (fMappa) fMappa.value = dati.mappa || '';
-            if (fFoto) fFoto.value = dati.foto.map(f => `${f.url}||${f.caption}`).join('\n');
-            if (fVideo) fVideo.value = dati.video.map(v => `${v.url}||${v.caption}`).join('\n');
-        }
+    <footer>
+        <div class="container">
+            <p>🐔 &copy; 2026 Uova di Puglia · allevamento a Brindisi</p>
+            <p class="footer-small">Uova fresche da galline felici</p>
+        </div>
+    </footer>
 
-        caricaForm();
-        setupImageUpload();
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            try {
-                if (fProdotti) {
-                    const lines = fProdotti.value.split('\n').filter(l => l.trim());
-                    const nuovi = [];
-                    lines.forEach(line => {
-                        const parts = line.split('||').map(s => s.trim());
-                        if (parts.length === 3) {
-                            nuovi.push({ nome: parts[0], prezzo: parts[1], desc: parts[2] });
-                        }
-                    });
-                    if (nuovi.length > 0) dati.prodotti = nuovi;
-                }
-
-                if (fOffTitolo) dati.offerta.titolo = fOffTitolo.value || "Offerta";
-                if (fOffPrezzo) dati.offerta.prezzo = fOffPrezzo.value || "€ 0.00";
-                if (fOffDesc) dati.offerta.desc = fOffDesc.value || "";
-
-                if (fMappa) {
-                    dati.mappa = fMappa.value.trim() || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.456789012345!2d17.9365!3d40.6389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1338f0e0e0e0e0e0%3A0x0!2zNDDCsDM4JzIwLjAiTiAxN8KwNTYnMTUuMCJF!5e0!3m2!1sit!2sit!4v1234567890";
-                }
-
-                if (fFoto) {
-                    const lines = fFoto.value.split('\n').filter(l => l.trim());
-                    const nuove = [];
-                    lines.forEach(line => {
-                        const parts = line.split('||').map(s => s.trim());
-                        if (parts.length === 2) {
-                            nuove.push({ url: parts[0], caption: parts[1] });
-                        }
-                    });
-                    if (nuove.length > 0) dati.foto = nuove;
-                }
-
-                if (fVideo) {
-                    const lines = fVideo.value.split('\n').filter(l => l.trim());
-                    const nuovi = [];
-                    lines.forEach(line => {
-                        const parts = line.split('||').map(s => s.trim());
-                        if (parts.length === 2) {
-                            nuovi.push({ url: parts[0], caption: parts[1] });
-                        }
-                    });
-                    if (nuovi.length > 0) dati.video = nuovi;
-                }
-
-                salvaDati();
-                renderTutto();
-
-                if (msg) {
-                    msg.textContent = '✅ Salvato!';
-                    msg.classList.add('visible');
-                    setTimeout(() => msg.classList.remove('visible'), 3000);
-                }
-
-                caricaForm();
-
-            } catch (err) {
-                if (msg) {
-                    msg.textContent = '❌ Errore: ' + err.message;
-                    msg.classList.add('visible');
-                }
-            }
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        caricaDati();
-        renderTutto();
-        initAdmin();
-
-        if (dati.prodotti.length === 0) {
-            dati.prodotti = [
-                { nome: "Uova Grandi", prezzo: "€ 6.50", desc: "6 uova extra large" },
-                { nome: "Uova Medie", prezzo: "€ 5.20", desc: "6 uova medie" },
-                { nome: "Uova Miste", prezzo: "€ 7.00", desc: "12 uova mix" },
-            ];
-            dati.offerta = {
-                titolo: "🎉 Offerta Speciale!",
-                prezzo: "€ 5.00",
-                desc: "6 uova grandi + 6 medie scontate!"
-            };
-            dati.mappa = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.456789012345!2d17.9365!3d40.6389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1338f0e0e0e0e0e0%3A0x0!2zNDDCsDM4JzIwLjAiTiAxN8KwNTYnMTUuMCJF!5e0!3m2!1sit!2sit!4v1234567890";
-            dati.foto = [
-                { url: "https://picsum.photos/seed/gallina1/400/300", caption: "Galline al pascolo" },
-                { url: "https://picsum.photos/seed/gallina2/400/300", caption: "Raccolta uova" },
-            ];
-            dati.video = [
-                { url: "https://www.w3schools.com/html/mov_bbb.mp4", caption: "Le galline nel pomeriggio" },
-            ];
-            salvaDati();
-            renderTutto();
-        }
-    });
-
-})();
+    <script src="script.js"></script>
+</body>
+</html>
