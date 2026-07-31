@@ -1,495 +1,191 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    background: #f9f7f0;
-    color: #2d2a24;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* HEADER  */
-header {
-    background: #3d5a3c;
-    color: white;
-    padding: 20px 0;
-    border-bottom: 4px solid #d4b68a;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.header-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.logo h1 {
-    font-size: 1.8rem;
-}
-
-.logo span {
-    display: block;
-    font-size: 0.8rem;
-    opacity: 0.8;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    padding: 6px 14px;
-    border-radius: 30px;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    background: #f5e6c8;
-    color: #2d4a2a;
-}
-
-/* HERO */
-.hero {
-    background: linear-gradient(145deg, #d9c8a8, #c2ae88);
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.hero h2 {
-    font-size: 2.8rem;
-    color: #1e3a1d;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 10px auto 30px;
-}
-
-.btn {
-    display: inline-block;
-    background: #3d5a3c;/* colore verde */
-    color: white;
-    padding: 14px 40px;
-    border-radius: 60px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.btn:hover {
-    background: #2a4529;
-}
-
-/* OFFERTE */
-.offerte {
-    background: #f5ede1;
-    padding: 40px 0;
-}
-
-.offerte h3 {
-    text-align: center;
-    font-size: 2rem;
-    color: #a1421a;
-}
-
-.offerta-box {
-    background: #fff8ed;
-    border-radius: 32px;
-    padding: 28px;
-    text-align: center;
-    border: 2px solid #e3b386;
-    max-width: 700px;
-    margin: 20px auto 0;
-}
-
-.offerta-box h4 {
-    font-size: 4rem;/*offerta speciale*/
-    color: #7a3a1a;
-}
-
-.offerta-box .prezzo-offerta {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #c0392b;
-    background: #fce4d6;
-    display: inline-block;
-    padding: 6px 30px;
-    border-radius: 60px;
-    margin: 10px 0;
-}
-
-/* PRODOTTI */
-.prodotti {
-    padding: 60px 0;
-    background: #f2ede2;
-}
-
-.prodotti h3 {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #2a3f28;
-    margin-bottom: 40px;
-}
-
-.grid-card {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 28px;
-}
-
-.card-prodotto {
-    background: white;
-    padding: 24px 16px;
-    border-radius: 32px;
-    text-align: center;
-    border: 1px solid #e3d5bb;
-}
-
-.card-prodotto h4 {
-    font-size: 1.6rem;
-    color: #2d4a2a;
-}
-
-.card-prodotto .prezzo {
-    font-weight: 600;
-    font-size: 1.3rem;
-    color: #5f4b2e;
-    background: #ede5d3;
-    display: inline-block;
-    padding: 4px 20px;
-    border-radius: 40px;
-    margin: 10px 0;
-}
-
-.btn-wa-grande {
-    display: inline-block;
-    background: #25D366;
-    color: white;
-    font-weight: 700;
-    font-size: 1.4rem;
-    padding: 18px 40px;
-    border-radius: 60px;
-    text-decoration: none;
-    box-shadow: 0 6px 20px rgba(37,211,102,0.4);
-}
-
-.btn-wa-grande:hover {
-    background: #1ebe5c;
-}
-
-/* GALLERIA */
-.galleria {
-    background: #e9dfcd;
-    padding: 60px 0;
-}
-
-.galleria h3 {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #2e442b;
-    margin-bottom: 40px;
-}
-
-.sezione-media {
-    margin-bottom: 40px;
-}
-
-.sezione-media h4 {
-    font-size: 1.4rem;
-    color: #3a5537;
-    border-left: 6px solid #b5976e;
-    padding-left: 16px;
-    margin-bottom: 18px;
-}
-
-.grid-media {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.media-item {
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1px solid #d6c6ab;
-}
-
-.media-item img,
-.media-item video {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-}
-
-.media-item .caption {
-    padding: 10px;
-    text-align: center;
-    font-weight: 500;
-}
-
-/* CHI SIAMO */
-.info-azienda {
-    background: #f2ede2;
-    padding: 60px 0;
-}
-
-.info-azienda h3 {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #2e442b;
-    margin-bottom: 40px;
-}
-
-.info-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-.info-item {
-    flex: 1 1 200px;
-    text-align: center;
-    background: #f6f0e2;
-    padding: 28px 16px;
-    border-radius: 48px;
-}
-
-.info-item span {
-    font-size: 3rem;
-    display: block;
-}
-
-.info-item h4 {
-    font-size: 1.4rem;
-    color: #2e442b;
-}
-
-/* MAPPA + WHATSAPP */
-.mappa-wa {
-    background: #dacbb4;
-    padding: 60px 0;
-}
-
-.mappa-wa h3 {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #2e442b;
-    margin-bottom: 40px;
-}
-
-.row-mapa {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.col-mapa {
-    flex: 1 1 300px;
-    background: #f6f0e2;
-    padding: 30px;
-    border-radius: 48px;
-}
-
-.map-wrapper {
-    border-radius: 28px;
-    overflow: hidden;
-    margin-top: 16px;
-}
-
-.wa-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.btn-wa {
-    display: inline-block;
-    background: #25D366;
-    color: white;
-    font-weight: 600;
-    font-size: 1.2rem;
-    padding: 16px 28px;
-    border-radius: 60px;
-    text-decoration: none;
-    text-align: center;
-    margin: 12px 0;
-}
-
-.btn-wa:hover {
-    background: #1ebe5c;
-}
-
-.wa-info {
-    display: flex;
-    justify-content: space-around;
-    font-weight: 500;
-}
-
-/* FOOTER */
-footer {
-    background: #2b4029;
-    color: #ece3d1;
-    text-align: center;
-    padding: 24px 0;
-}
-
-/* ADMIN */
-.admin-panel {
-    background: #f2ede2;
-    padding: 40px 20px;
-    min-height: 70vh;
-}
-
-.admin-panel h2 {
-    color: #2a3f28;
-    border-left: 6px solid #7a9f72;
-    padding-left: 18px;
-    margin-bottom: 28px;
-}
-
-.admin-card {
-    background: #fffcf5;
-    border-radius: 36px;
-    padding: 30px 28px;
-    max-width: 780px;
-    margin: 0 auto;
-    border: 1px solid #dbccb2;
-}
-
-.admin-card label {
-    display: block;
-    font-weight: 600;
-    color: #2f402c;
-    margin: 20px 0 8px;
-}
-
-.admin-card input,
-.admin-card textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #d6c6ab;
-    border-radius: 60px;
-    font-size: 1rem;
-    background: #faf6ed;
-    font-family: inherit;
-}
-
-.admin-card textarea {
-    border-radius: 24px;
-    resize: vertical;
-    min-height: 80px;
-}
-
-.admin-card .btn-admin {
-    background: #3d5a3c;
-    color: white;
-    border: none;
-    padding: 14px 32px;
-    border-radius: 60px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-top: 24px;
-    cursor: pointer;
-    width: 100%;
-}
-
-.admin-card .btn-admin:hover {
-    background: #1f3a1e;
-}
-
-.admin-msg {
-    margin-top: 18px;
-    padding: 12px;
-    border-radius: 60px;
-    background: #dfe9d7;
-    text-align: center;
-    display: none;
-}
-
-.admin-msg.visible {
-    display: block;
-}
-
-.upload-area {
-    border: 2px dashed #b5976e;
-    padding: 20px;
-    border-radius: 24px;
-    background: #faf6ed;
-    text-align: center;
-    margin: 10px 0;
-}
-
-.upload-area input[type="file"] {
-    display: none;
-}
-
-.upload-label {
-    display: inline-block;
-    background: #3d5a3c;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 60px;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-.upload-label:hover {
-    background: #2a4529;
-}
-
-.upload-preview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 12px;
-}
-
-.upload-preview img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 2px solid #d6c6ab;
-}
-
-@media (max-width: 700px) {
-    .header-flex {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    nav a {
-        margin-left: 0;
-        margin-right: 12px;
-        font-size: 0.85rem;
-        padding: 4px 10px;
-    }
-    .hero h2 {
-        font-size: 2rem;
-    }
-    .grid-card,
-    .grid-media {
-        grid-template-columns: 1fr 1fr;
-    }
-    .row-mapa {
-        flex-direction: column;
-    }
-    .wa-info {
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-    }
-}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uova di Puglia · Allevamento a Brindisi</title>
+    <meta name="description" content="Uova fresche da allevamento a pascolo libero a Brindisi. Galline felici a 5 km dal mare. Ordina online su WhatsApp." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <h1>🐔 Uova di Puglia</h1>
+                <span>📍 Brindisi · 5 km dal mare</span>
+            </div>
+            <nav>
+                <a href="#prodotti">Prodotti</a>
+                <a href="#galleria">Galleria</a>
+                <a href="#chi-siamo">Chi siamo</a>
+                <a href="#dove-siamo">Dove siamo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge">🐓 Allevamento a pascolo</span>
+                    <h2>Uova fresche <br>di galline <span class="highlight">felici</span></h2>
+                    <p>2 ettari di libertà a Brindisi, a soli 5 km dal mare. Le nostre galline pascolano all'aperto tutto l'anno dall'alba al tramonto.ZERO STRESS.</p>
+                    <div class="hero-buttons">
+                        <a href="#prodotti" class="btn-primary">Scopri le uova</a>
+                        <a href="https://wa.me/393319138180?text=Ciao%2C%20vorrei%20informazioni%20sulle%20uova%20fresche%21" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-img-placeholder">
+                        <span>🐔</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Ettari di terreno</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Km dal mare</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Pascolo libero</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">365</span>
+                    <span class="stat-label">Giorni all'anno</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFERTA DEL GIORNO -->
+        <section class="offerte">
+            <div class="container">
+                <div class="offerte-header">
+                    <span class="section-badge">🔥 Offerta del giorno</span>
+                    <h3>Non perdere questa occasione!</h3>
+                </div>
+                <div id="offertaContainer" class="offerta-box"></div>
+            </div>
+        </section>
+
+        <!-- PRODOTTI -->
+        <section id="prodotti" class="prodotti">
+            <div class="container">
+                <div class="prodotti-header">
+                    <span class="section-badge">📦 Le nostre uova</span>
+                    <h3>Qualità che si vede</h3>
+                    <p>Raccolte a mano ogni giorno dalle nostre galline felici</p>
+                </div>
+                <div class="grid-card" id="listaProdotti"></div>
+                <div class="cta-center">
+                    <a href="https://wa.me/393319138180?text=Ciao%2C%20vorrei%20ordinare%20delle%20uova%20fresche%21" 
+                       target="_blank" class="btn-wa-grande">
+                       💬 Ordina ora su WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERIA -->
+        <section id="galleria" class="galleria">
+            <div class="container">
+                <div class="galleria-header">
+                    <span class="section-badge">📸 Vita in fattoria</span>
+                    <h3>I nostri momenti</h3>
+                </div>
+                <div class="sezione-media">
+                    <div class="grid-media" id="galleriaFoto"></div>
+                </div>
+                <div class="sezione-media">
+                    <div class="grid-media" id="galleriaVideo"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHI SIAMO -->
+        <section id="chi-siamo" class="info-azienda">
+            <div class="container">
+                <div class="info-header">
+                    <span class="section-badge">🌿 La nostra filosofia</span>
+                    <h3>Chi siamo</h3>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">🌿</div>
+                        <h4>Pascolo libero</h4>
+                        <p>Galline su 2 ettari di terreno naturale a Brindisi</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🌊</div>
+                        <h4>Vicino al mare</h4>
+                        <p>A soli 5 km dalla costa, aria pura e salubre</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🥚</div>
+                        <h4>Raccolta manuale</h4>
+                        <p>Uova raccolte a mano ogni giorno con cura</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">❤️</div>
+                        <h4>Benessere animale</h4>
+                        <p>Galline felici = uova più buone e genuine</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAPPA + WHATSAPP -->
+        <section id="dove-siamo" class="mappa-wa">
+            <div class="container">
+                <div class="mappa-header">
+                    <span class="section-badge">📍 Dove trovarci</span>
+                    <h3>Vieni a trovarci</h3>
+                </div>
+                <div class="row-mapa">
+                    <div class="col-mapa">
+                        <p><strong id="posizioneTesto">Contrada Mare, Brindisi</strong></p>
+                        <div class="map-wrapper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2329.571839311396!2d17.848331754789978!3d40.64617963734341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sit!2sit!4v1785482670500!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-mapa wa-col">
+                        <div class="wa-card">
+                            <h4>📲 Ordina su WhatsApp</h4>
+                            <p>Scrivici per disponibilità, prezzi e consegne</p>
+                            <a href="https://wa.me/393319138180?text=Ciao%2C%20vorrei%20ordinare%20delle%20uova%20fresche%21" 
+                               target="_blank" class="btn-wa">
+                               💬 Contattaci ora
+                            </a>
+                            <div class="wa-info">
+                                <span>📞 +39 331 913 8180</span>
+                                <span>⏰ 8:00 – 18:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>🐔 &copy; 2026 Uova di Puglia · allevamento a Brindisi</p>
+            <p class="footer-small">Uova fresche da galline felici</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
